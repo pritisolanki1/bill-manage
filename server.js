@@ -25,13 +25,13 @@ db.sequelize.sync();
 // db.sequelize.sync({ force: true }).then(() => {
 //   console.log("Drop and re-sync db.");
 // });
-app.use(express.static(__dirname + '/dist/<name-of-app>'));
+app.use(express.static(__dirname + '/dist/Angular8ClientCrud'));
 
 // simple route
 app.get("/", (req, res) => {
   
   res.json({ message: "Welcome to bezkoder application." });
-  res.sendFile(path.join(__dirname+'/dist/<name-of-app>/index.html'));
+  res.sendFile(path.join(__dirname+'/dist/Angular8ClientCrud/index.html'));
 });
   
 require("./src/app/routes/turorial.routes")(app);
