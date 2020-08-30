@@ -13,6 +13,7 @@ import { PrintComponent } from './components/print/print.component';
 import { NgxPrintModule } from 'ngx-print';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { FillRowsPipe } from './components/print/FillRowsPipe';
+import { BoldPipe } from './components/add-customer/bold.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FillRowsPipe } from './components/print/FillRowsPipe';
     TutorialDetailsComponent,
     TutorialsListComponent,
     AddCustomerComponent,
-    FillRowsPipe
+    FillRowsPipe,
+    BoldPipe
    
   ],
   imports: [

@@ -41,6 +41,7 @@ export class AddTutorialComponent implements OnInit {
   submitted = false;
   isnewCust = false;
   btnDisabled: boolean = false;
+  toDate;
   // constructor(private tutorialService: TutorialService) { }
 
   constructor(private tutorialService: TutorialService,

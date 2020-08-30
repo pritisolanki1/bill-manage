@@ -22,6 +22,7 @@ export class TutorialDetailsComponent implements OnInit {
   editForm: FormGroup;
   submitted = false;
   subscription: Subscription;
+  toDate;
 
   post: Post = {
     currdate: new Date(Date.now()),

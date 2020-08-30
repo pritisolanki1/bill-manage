@@ -21,6 +21,7 @@ export class AddCustomerComponent implements OnInit {
   tutorials: any;
   
   uniquecustList;
+  btnDisabled;
   subscription: Subscription;
 
   constructor(private formBuilder: FormBuilder,
@@ -49,7 +50,7 @@ export class AddCustomerComponent implements OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-  onclickAddDetail(id: number): void {
+  onclickAddDetail(): void {
     this.submitted = true;
 
     console.log("form:" + this.custForm.invalid);
