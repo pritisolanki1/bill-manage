@@ -1,0 +1,40 @@
+<div class="submit-form" style="width:100%;padding-top: 20px;">
+
+    <div style="width: 60%;float:left">
+        <form [formGroup]="custForm">
+            <div class="form-group ">
+                <label for="name" style="color: black;">Customer Name</label>
+                <input type="text" formControlName="cust_name" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.cust_name.errors }" autocomplete="on"
+                    (keydown.tab)="save($event)" id="cust_name" [(ngModel)]="cust_name">
+                <div *ngIf="submitted && f.cust_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.cust_name.errors.required">Customer Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rate">Rate</label>
+                <input type="number" formControlName="rate" class="form-control" [(ngModel)]="rate"
+                    [ngClass]="{ 'is-invalid': submitted && f.rate.errors }">
+                <div *ngIf="submitted && f.rate.errors" class="invalid-feedback">
+                    <div *ngIf="f.rate.errors.required">Rate is required</div>
+                </div>
+            </div>
+            <button class="button1" [disabled]="btnDisabled" [ngStyle]="{'color':(btnDisabled)? 'gray':'white'}"
+                (click)="onclickAddDetail()">Next</button>
+            <a routerLink="['/add',jkjb,kjbkb]" class="nav-link"></a>
+        </form>
+    </div>
+
+    <div style="width: 40%;float: right;padding-left: 20px;margin-top: 30px;">
+        <h1 style="font-size: 20px; background: -webkit-linear-gradient(#141517, #6A9113);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;">Select Customer from here</h1>
+        <table style="text-align: center  ;width:100%" border="1" bordercolor="#141517">
+
+            <tr *ngFor='let item of uniquecustList' (click)='getCust(item.cust_name)'>
+                <td style="color:#141517 ;">{{item.cust_name}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

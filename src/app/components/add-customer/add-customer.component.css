@@ -1,0 +1,21 @@
+.submit-form {
+    max-width: 500px;
+    margin: auto;
+  }
+tr:nth-child(even)
+{
+background-color:#e1e9cf;
+}
+.button1 {
+    /* background-color: #ffc107; */
+   
+    padding: 5px 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+    float:right;
+    background-image: linear-gradient(to right, #6A9113 0%, #141517 5%, #6A9113 100%);
+    /* background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%); */
+  }
+  .button1:hover { background-position: right center;
+  color: white; }

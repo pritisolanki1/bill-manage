@@ -1,0 +1,51 @@
+<div class="submit-form" style="padding-top: 20px;">
+
+  <form [formGroup]="registerForm" (ngSubmit)="saveTutorial()">
+    <!-- <div class="form-group ">
+
+      <label for="name" style="color: black;">Customer Name</label>
+      <input type="text" formControlName="cust_name" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.cust_name.errors }" id="cust_name" [(ngModel)]="tutorial.cust_name">
+      <div *ngIf="submitted && f.cust_name.errors" class="invalid-feedback">
+        <div *ngIf="f.cust_name.errors.required">Customer Name is required</div>
+      </div>
+
+    </div> -->
+
+    <div class="form-group" >
+      <label for="name">Jangad no</label>
+      <input type="number" formControlName="jangadNo" class="form-control" [(ngModel)]="tutorial.jangadNo"
+        [ngClass]="{ 'is-invalid': submitted && f.jangadNo.errors }" value={{count}}>
+      <div *ngIf="submitted && f.jangadNo.errors" class="invalid-feedback">
+        <div *ngIf="f.jangadNo.errors.required">jangadNo is required</div>
+      </div>
+    </div>
+    <div class="form-group" >
+      <label for="name">Date &nbsp; </label>
+      <input type="date" formControlName="currdate" [(ngModel)]="tutorial.currdate"
+        value="{{ post.currdate | date:'yyyy-MM-dd' }}">
+      {{toDate}}
+    </div>
+    <div class="form-group" >
+      <label for="Than">Than</label>
+      <input type="number" formControlName="than" class="form-control" [(ngModel)]="tutorial.than"
+        [ngClass]="{ 'is-invalid': submitted && f.than.errors }">
+      <div *ngIf="submitted && f.than.errors" class="invalid-feedback">
+        <div *ngIf="f.than.errors.required">Than is required</div>
+      </div>
+
+    </div>
+    <div class="form-group" >
+      <label for="weight">Weight</label>
+      <input type="number"  formControlName="weight" class="form-control" [(ngModel)]="tutorial.weight"
+        [ngClass]="{ 'is-invalid': submitted && f.weight.errors }">
+      <div *ngIf="submitted && f.weight.errors" class="invalid-feedback">
+        <div *ngIf="f.weight.errors.required">Weight is required</div>
+      </div>
+    </div>
+
+    <button class="button1" [disabled]="btnDisabled" [ngStyle]="{'color':(btnDisabled)? 'gray':'white'}">Submit</button>
+    <!-- </div> -->
+
+  </form>
+</div>

@@ -1,0 +1,168 @@
+<div style="height:100vh;background-color: white;padding-top: 20px;">
+    <div id="demo" style="margin-left: 10%;margin-right: 10%;">
+        <div>
+            <div style="float:left; width:30%;">
+                <p> કિશન આર સોલંકી</p>
+            </div>
+
+            <div style="float:left; width:40%; text-align: center">
+                શ્રી 1 ||<br />
+                શ્રી ગણેશાય નમઃ
+
+            </div>
+
+            <div style="float:right; width:30%; text-align: center; ">
+                Mo: 9998919891<br />
+                <p style="text-indent: 2em;">9825666030</p>
+                <!-- <p style="padding-left: 25px;">9825666030</p>        -->
+            </div>
+        </div>
+        <br style="clear: both;">
+        <div style="float:center;width:100%;text-align: center;color: #6A9113; font-size: xx-large; font-weight: bold;">
+            બાપા સીતારામ
+
+        </div>
+        <div style="float:right;padding-left: 100px; width:100%; text-align: center;font-weight: bold;">
+            સરીન પ્લાનર
+        </div>
+        <br style="clear: both;">
+        <div style="width:100%;margin-top: 20px;">
+            <p style="text-decoration: underline;">૨ જો માળ કોટક પાનની ઉપર, J.K પેટ્રોલ પંપ ની સામે, લક્ષ્મી હોટલ ની
+                બાજુમાં
+                વરાછા રોડ
+                સુરત.</p>
+        </div>
+
+        <div style="width:100%;">
+            <div style="float:left; width:50%;margin-top:15px">
+                Name : {{cName}}
+
+            </div>
+            <div style="float:right;text-align: center; width:50%;margin-top:15px">
+                Date : 1/{{smonth}}/{{syear}} થી {{mcount}}/{{smonth}}/{{syear}}
+            </div>
+        </div>
+        <br style="clear: both;">
+
+        <div style="width:100%;margin-top: 30px;">
+            <div class="col-md-6" style="float:left; width:50%;">
+                <!-- <div *ngIf="currentTutorial"> -->
+                <ul class="list-group">
+                    <table border="1">
+                        <thead style="text-align:center">
+                            <!-- <th>Id</th> -->
+                            <th>તારીખ</th>
+                            <th>જાંગડ નં.</th>
+                            <th>થાન</th>
+                            <th>વજન</th>
+                        </thead>
+                        <ng-container *ngFor="let tutorial of fArray; let i = index">
+                            <tr style="height:25px;text-align:center">
+                                <!-- <td> {{tutorial.id }}</td> -->
+                                <td style="width: 100px;">{{ tutorial.date }}</td>
+                                <td style="width: 70px;"> {{ tutorial.jangadNo }}</td>
+                                <td style="width: 50px;">{{ tutorial.than }}</td>
+                                <td style="width: 50px;">{{ tutorial.weight }}</td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngFor="let tutorial of fArray|fillRows:fFill; let i = index">
+
+                            <tr style="height:25px">
+                                <!-- <td> {{tutorial.id }}</td> -->
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                        </ng-container>
+
+                        <tr style="font-weight: bold;">
+                            <td colspan="2" style="text-align: center;"> ટોટલ</td>
+                            <td colspan="2" style="padding-left: 40px;">{{sumF}}</td>
+                        </tr>
+                    </table>
+                </ul>
+                <!-- </div> -->
+            </div>
+
+            <div class="col-md-6" style="float:left; width:50%;">
+                <!-- <div *ngIf="isnextPresent"> -->
+                <ul class="list-group">
+                    <table border="1">
+                        <thead style="text-align:center">
+                            <!-- <th>Id</th> -->
+                            <th>તારીખ</th>
+                            
+                            <th>જાંગડ નં.</th>
+                            <th>થાન</th>
+                            <th>વજન</th>
+                        </thead>
+
+                        <!-- <ng-container *ngFor="let tutorial of currentTutorial; let i = index">
+                            <tr *ngIf="i>15">
+                
+                                <td>{{ tutorial.date }}</td>
+                                <td>{{ tutorial.than }}</td>
+                                <td> {{ tutorial.jangadNo }}</td>
+                                <td>{{ tutorial.weight }}</td>
+                            </tr>
+                        </ng-container> -->
+                        <ng-container *ngFor="let tutorial of sArray; let i = index">
+                            <tr style="height:25px;text-align:center">
+
+                                <td style="width: 100px;">{{ tutorial.date }}</td>
+                                <td style="width: 70px;"> {{ tutorial.jangadNo }}</td>
+                            
+                                <td style="width: 50px;">{{ tutorial.than }}</td>
+                                <td style="width: 50px;">{{ tutorial.weight }}</td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngFor="let tutorial of sArray|fillRows:sFill; let i = index">
+
+                            <tr style="height:25px">
+                                <!-- <td> {{tutorial.id }}</td> -->
+                                <td style="width: 100px;"></td>
+                                <td style="width: 50px;"></td>
+                                <td style="width: 70px;"></td>
+                                <td style="width: 50px;"></td>
+                            </tr>
+                        </ng-container>
+                        <tr style="font-weight: bold;">
+                            <td colspan="2" style="text-align: center;"> ટોટલ</td>
+                            <td colspan="2"  style="padding-left: 45px;">{{sumL}}</td>
+                        </tr>
+                    </table>
+                </ul>
+                <!-- </div> -->
+            </div>
+        </div>
+        <br style="clear: both;">
+
+        <br style="clear: both;">
+        <div style="width:100%;">
+            <div >
+                <table border="1" style="float:right;margin-right: 20px;">
+                    <thead>
+                        <th style="padding-left: 3px;text-align:center;padding-right: 3px;">ટોટલ થાન</th>
+                        <th style="padding-left: 3px;text-align:center;padding-right: 3px;">ભાવ</th>
+                        <th style="padding-left: 3px;text-align:center;padding-right: 3px;">કુલ રકમ</th>
+                    </thead>
+                    <tr>
+                        <td style="padding-left: 3px;padding-right: 3px;text-align:center;width: 80px;"> {{sumF+sumL}}</td>
+                        <td style="padding-left: 3px;padding-right: 3px;text-align:center; width: 60px;">{{rate}}</td>
+                        <td style="padding-left: 3px;padding-right: 3px;text-align:center; width: 80px;">{{value}}</td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br style="clear: both;">
+        <div>
+            નોંધ:ભૂલ ચૂક લેવી દેવી
+        </div>
+        <div style="float:right;padding-top: 5px;font-weight: bold;text-align: center;">ફોર, બાપા સીતારામ</div>
+    </div>
+    <br style="clear: both;">
+    <button printSectionId="demo" class="button1" style="margin-left: 10%;margin-right: 10%;" ngxPrint>print</button>
+</div>

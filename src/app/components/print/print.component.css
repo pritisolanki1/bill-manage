@@ -1,0 +1,30 @@
+.title{
+    width:100%;margin-top:50px;text-align: center; font-size: xx-large; font-weight: bold;
+}
+div
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+   /* th{
+    text-align:center;
+    border:1px black solid;
+    background:lightgray;
+   } */
+   tr{
+    
+    border:1px black solid;
+   }
+   .button1 {
+    /* background-color: #ffc107; */
+   
+    padding: 5px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+    background-image: linear-gradient(to right, #6A9113 0%, #141517 5%, #6A9113 100%);
+    /* background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%); */
+  }
+  .button1:hover { background-position: right center;
+  color: white; }
+  

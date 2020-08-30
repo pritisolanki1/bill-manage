@@ -1,0 +1,95 @@
+<div>
+  <div class="list row">
+    <div class="col-md-12" style="padding: 5px;display: flex;
+  align-items: center;">
+      <div class="col-md-5">
+        <a class="button1" (click)="movetoComponent2(1)">Print</a>
+      </div>
+      <!-- style="text-align: right;" -->
+      <div class="col-md-7" style="float:right;">
+
+        <table style="width: 100%;" class="table1">
+          <tr>
+            <td width="50%">
+              Customer Name
+            </td>
+            <td width="25%">
+              Date
+            </td>
+            <td width="25%"></td>
+          </tr>
+          <tr>
+            <td style="width:100%">
+              <select name="customer" class="rounded-inputs20 select-select"
+                style="margin-left:50px;width: 70%;text-align-last: center;"
+                (change)="onChangeCust($event.target.value)" [(ngModel)]="selectedCust">
+                <option value="Select Customer">Select Customer</option>
+                <option *ngFor="let customer of uniquecustList" [value]="customer.cust_name">{{customer.cust_name}}
+                </option>
+              </select>
+            </td>
+            <td style="float: right;">
+              <select name="month" class="rounded-inputs20 select-select " style="margin-left:25px;"
+                (change)="onChangeMonth($event.target.value)">
+                <option *ngFor="let month of months" [value]="month.id" [selected]="selectedMonth==month.id">
+                  {{month.name}}
+                </option>
+              </select>
+
+            </td>
+            <td>
+              <select name="year" class="rounded-inputs20 select-select " style="margin-left:10px;"
+                (change)="onChange($event.target.value)" [(ngModel)]="selectedYear">
+                <option *ngIf="isAnyYear==0" value="Year">Year</option>
+                <option *ngFor="let date of yearList" [value]="date.year">{{date.year}}</option>
+              </select>
+            </td>
+          </tr>
+          
+        </table>
+      </div>
+    </div>
+    <br style="clear: both;">
+    <div class="col-md-10" style="margin-top: 20px;">
+      <div *ngIf="responseCount==0">
+        <h4>No Data Found </h4>
+      </div>
+
+      <div *ngIf="responseCount!=0 && responseCount!=-1">
+
+        <ul class="list-group">
+          <table class="table2">
+            <thead>
+              <!-- <th>Id</th> -->
+              <th>JangadNo</th>
+              <th>Date</th>
+              <th>Customer Name</th>
+              <th>Than</th>
+              <th>weight</th>
+            </thead>
+
+            <tr *ngFor="let tutorial of currentTutorial; let i = index" border=1 (click)="movetoEdit(tutorial.id)">
+              <!-- <td>{{ tutorial.id }}</td> -->
+              <td> {{ tutorial.jangadNo }}</td>
+              <td>{{ tutorial.date }}</td>
+              <td>{{tutorial.cust_name}}</td>
+              <td>{{ tutorial.than }}</td>
+              <td>{{ tutorial.weight }}</td>
+
+              <!-- <a class="badge badge-warning" (click)="movetoEdit(tutorial.id)">Edit</a> -->
+              <!-- <a class="badge badge-warning" href="/tutorials/{{ tutorial.id }}">Edit</a> -->
+            </tr>
+
+            <!--       
+    </div> -->
+          </table>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="!currentTutorial">
+        <br />
+        <p>Please click on a Dealer...</p>
+      </div>
+    </div>
+  </div>
